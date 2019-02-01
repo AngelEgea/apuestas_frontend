@@ -8,16 +8,18 @@ import { AppComponent } from './app.component';
 import { FormLoginComponent } from './form-login/form-login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './shared/core.module';
+import { LoginComponent } from './form-login/components/login/login.component';
+import { FormLoginModule } from './form-login/form-login-module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FormLoginComponent
+    AppComponent
   ],
   imports: [
-    CoreModule,
     BrowserModule,
-    AppRoutingModule,
+    FormLoginModule,
+    CoreModule,
+    AppRoutingModule
   ],
   providers: [
   ],
