@@ -16,7 +16,7 @@
           <button mat-raised-button [disabled]="!accessForm.form.valid">Login</button>
       </div>
       <div layout="column" flex>
-          <button mat-raised-button color="primary">Register</button>
+          <button mat-raised-button color="primary" (click)="onRegisterClick()">Register</button>
       </div>
   </div>
 </form>
