@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Persona } from '../shared/persona';
+import { HostBackend } from '../shared/hostBackend';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -13,7 +14,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class GestionarPersonasService {
-  private getAllApuestasUrl = 'http://localhost:8081/apuestas-backend/services/rest/personamanagement/v1/persona/search';
+  private getAllPersonasUri = '/apuestas-backend/services/rest/personamanagement/v1/persona/search';
   private pageable = {
     'pageable' : {
       'pageNumber' : '0',
@@ -25,7 +26,7 @@ export class GestionarPersonasService {
 
   /** POST apuestas from the server */
   getPersonas (): Observable<Persona[]> {
-    return this.http.post<Persona[]>(this.getAllApuestasUrl, this.pageable, httpOptions)
+    return this.http.post<Persona[]>(this.generateURL(this.getAllPersonasUri), this.pageable, httpOptions)
       .pipe(
         map(personas => (this.procesarPersona(personas)))
       );
@@ -34,5 +35,9 @@ export class GestionarPersonasService {
   private procesarPersona(personas: Persona[]): Persona[] {
     personas = personas['content'];
     return personas;
+  }
+
+  private generateURL(uri: string): string {
+    return 'http://' + HostBackend.ip + ':' + HostBackend.port + uri;
   }
 }

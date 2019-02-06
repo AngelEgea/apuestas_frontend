@@ -1,4 +1,3 @@
-
 export class Apuesta {
     id: number;
     modificationCounter: number;

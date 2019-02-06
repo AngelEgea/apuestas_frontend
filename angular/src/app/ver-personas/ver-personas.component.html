@@ -1,4 +1,4 @@
-<div *ngIf="personas.length;else personasVacio">
+<div *ngIf="personas?.length;else personasVacio">
   <div id="ver-apuestas-component">
     <h1>Todas las personas</h1>
     
@@ -15,7 +15,7 @@
 </div>
 
 <ng-template #personasVacio>
-    <h1>
-      No hay personas
-    </h1>
-  </ng-template>
+  <h1>
+    No hay personas
+  </h1>
+</ng-template>
