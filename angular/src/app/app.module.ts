@@ -10,10 +10,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './shared/core.module';
 import { LoginComponent } from './form-login/components/login/login.component';
 import { FormLoginModule } from './form-login/form-login-module';
+import { VerApuestasComponent } from './ver-apuestas/ver-apuestas.component';
+import { VerPersonasComponent } from './ver-personas/ver-personas.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VerApuestasComponent,
+    VerPersonasComponent
   ],
   imports: [
     BrowserModule,

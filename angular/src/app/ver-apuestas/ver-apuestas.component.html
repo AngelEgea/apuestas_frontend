@@ -1,0 +1,14 @@
+<div id="ver-apuestas-component">
+  <h1>Todas las apuestas</h1>
+  
+  <ul class="apuestas-view">
+    <li *ngFor="let apuesta of apuestas$ | async" >
+      <p>{{apuesta.ladoApostado}}</p>
+      <p>{{apuesta.resultado}}</p>
+      <p>{{apuesta.fecha}}</p>
+      <p>{{apuesta.valorApostado}}</p>
+      <p>{{apuesta.valorGanado}}</p>
+      <p>{{apuesta.usuarioId}}</p>
+    </li>
+  </ul>
+</div>
