@@ -1,10 +1,11 @@
-import { Usuario } from './usuario';
 
 export class Apuesta {
+    id: number;
+    modificationCounter: number;
     ladoApostado: boolean;
     resultado: boolean;
     fecha: Date;
     valorApostado: number;
     valorGanado: number;
-    usuario: Usuario;
+    usuarioId: number;
 }

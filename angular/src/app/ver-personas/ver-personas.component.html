@@ -1,13 +1,21 @@
-<div id="ver-apuestas-component">
-  <h1>Todas las personas</h1>
-  
-  <ul class="apuestas-view">
-    <li *ngFor="let persona of personas" >
-      <!--<p>"{{persona.id}}</p>-->
-      <!--<p>""{{persona.modificationCounter}}</p>-->
-      <p>Nombre: <b>{{persona.nombre}}</b></p>
-      <p>Fecha de nacimiento (TODO): <b>{{persona.fechaNacimiento | date : 'medium'}}</b></p>
-      <p>Email: <b>{{persona.email}}</b></p>
-    </li>
-  </ul>
+<div *ngIf="personas.length;else personasVacio">
+  <div id="ver-apuestas-component">
+    <h1>Todas las personas</h1>
+    
+    <ul class="apuestas-view">
+      <li *ngFor="let persona of personas" >
+        <!--<p>"{{persona.id}}</p>-->
+        <!--<p>""{{persona.modificationCounter}}</p>-->
+        <p>Nombre: <b>{{persona.nombre}}</b></p>
+        <p>Fecha de nacimiento (TODO): <b>{{persona.fechaNacimiento | date : 'medium'}}</b></p>
+        <p>Email: <b>{{persona.email}}</b></p>
+      </li>
+    </ul>
+  </div>
 </div>
+
+<ng-template #personasVacio>
+    <h1>
+      No hay personas
+    </h1>
+  </ng-template>

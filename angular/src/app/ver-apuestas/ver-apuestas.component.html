@@ -1,14 +1,23 @@
-<div id="ver-apuestas-component">
-  <h1>Todas las apuestas</h1>
-  
-  <ul class="apuestas-view">
-    <li *ngFor="let apuesta of apuestas$ | async" >
-      <p>{{apuesta.ladoApostado}}</p>
-      <p>{{apuesta.resultado}}</p>
-      <p>{{apuesta.fecha}}</p>
-      <p>{{apuesta.valorApostado}}</p>
-      <p>{{apuesta.valorGanado}}</p>
-      <p>{{apuesta.usuarioId}}</p>
-    </li>
-  </ul>
+<div *ngIf="apuestas.length;else apuestasVacio">
+  <div id="ver-apuestas-component">
+    <h1>Todas las apuestas</h1>
+    
+    <ul class="apuestas-view">
+      <li *ngFor="let apuesta of apuestas" >
+        <p>Id: {{apuesta.id}}</p>
+        <p>Lado apostado: <b>{{apuesta.ladoApostado}}</b></p>
+        <p>Resultado: <b>{{apuesta.resultado}}</b></p>
+        <p>Fecha de la apuesta <b>{{apuesta.fecha | date : 'medium'}}</b></p>
+        <p>Valor de la apuesta <b>{{apuesta.valorApostado}}</b></p>
+        <p>Valor ganado <b>{{apuesta.valorGanado}}</b></p>
+        <p>Id del usuario <b>{{apuesta.usuarioId}}</b></p>
+      </li>
+    </ul>
+  </div>
 </div>
+
+<ng-template #apuestasVacio>
+  <h1>
+    No hay apuestas
+  </h1>
+</ng-template>

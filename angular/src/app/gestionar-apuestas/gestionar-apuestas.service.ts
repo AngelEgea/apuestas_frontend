@@ -27,7 +27,15 @@ export class GestionarApuestasService {
   getApuestas (): Observable<Apuesta[]> {
     return this.http.post<Apuesta[]>(this.getAllApuestasUrl, this.pageable, httpOptions)
       .pipe(
-        tap(_ => console.log('got apuestas'))
+        map(apuestas => (this.procesarApuesta(apuestas)))
       );
+  }
+
+  private procesarApuesta(apuestas: Apuesta[]): Apuesta[] {
+    apuestas = apuestas['content'];
+    const nuevas_apuestas: Apuesta[] = [] as Apuesta[];
+    apuestas.forEach(apuesta => nuevas_apuestas.push(apuesta['apuesta']));
+    apuestas = nuevas_apuestas;
+    return apuestas;
   }
 }

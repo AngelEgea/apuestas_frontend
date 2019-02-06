@@ -13,12 +13,11 @@ export class VerApuestasComponent implements OnInit {
   constructor(private gestorApuestas: GestionarApuestasService) { }
 
   ngOnInit() {
-    // setInterval(() => { this.getApuestas(); }, 1000);
     this.getApuestas();
+    setInterval(_ => this.getApuestas(), 1000);
   }
 
   getApuestas(): void {
-    this.gestorApuestas.getApuestas().subscribe(nuevas_apuestas => this.apuestas = nuevas_apuestas);
-    console.log(this.apuestas);
+    this.gestorApuestas.getApuestas().subscribe(nuevas_apuestas => this.apuestas = nuevas_apuestas as Apuesta[]);
   }
 }
