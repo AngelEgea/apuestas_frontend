@@ -102,10 +102,10 @@
     "@angular-devkit/core" "7.1.4"
     rxjs "6.3.3"
 
-"@angular/animations@~7.1.0":
-  version "7.1.4"
-  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-7.1.4.tgz#6c1ca6b8449bb0fa874343371961fccbe19791bc"
-  integrity sha512-877LZ83scksJtflVz97CUWlSsZnxduBxPD+ls5OTrTT/bq3muzHCm8rgTO7S8fBwwrEVXLorvMAlhDPpMg5Swg==
+"@angular/animations@^7.2.3":
+  version "7.2.3"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-7.2.3.tgz#4999bdc32962191d0d826a09d9f0f0bae7b37a62"
+  integrity sha512-5WoiDnVS2OhGgJ1oepFNF2UcfR4sJj97KRnTmLWQ0S4N4WpXX83CoOQVXvXwfotyb8uNtl4zRi2NuvN/MIuFuA==
   dependencies:
     tslib "^1.9.0"
 
