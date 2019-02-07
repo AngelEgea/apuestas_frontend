@@ -18,6 +18,9 @@ export class VerApuestasComponent implements OnInit {
   }
 
   getApuestas(): void {
-    this.gestorApuestas.getApuestas().subscribe(nuevas_apuestas => this.apuestas = nuevas_apuestas as Apuesta[]);
+    this.gestorApuestas.getApuestas().subscribe(
+      (nuevas_apuestas => this.apuestas = nuevas_apuestas as Apuesta[]),
+      (_ => this.apuestas = [])
+    );
   }
 }

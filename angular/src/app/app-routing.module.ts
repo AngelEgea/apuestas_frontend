@@ -8,7 +8,7 @@ const appRoutes: Routes = [
   { path: 'FormLogin', component: FormLoginComponent},               // Redirect if url path is /access.
   { path: 'VerApuestas', component: VerApuestasComponent },
   { path: 'VerPersonas', component: VerPersonasComponent },
-  { path: '**', redirectTo: '/VerApuestas', pathMatch: 'full' }  // Redirect if url path do not match with any other route.
+  { path: '**', redirectTo: '/FormLogin', pathMatch: 'full' }  // Redirect if url path do not match with any other route.
 ];
 
 @NgModule({

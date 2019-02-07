@@ -1,37 +1,17 @@
-<!--
-<td-layout>
-  <mat-card>
-      <img mat-card-image src="assets/images/bet_logo.png">
-      <app-login></app-login>
-  </mat-card>
-</td-layout>
--->
-<!--
-<td-layout *ngIf="{
-  numerito: numerito$ | async,
-  accessCodeVisitor: accessCodeVisitor$  | async,
-  queue: queue$ | async
-} as data;">
-  <mat-card>
-      <mat-grid-list cols="2" rowHeight="2:1">
-          <mat-grid-tile><img mat-card-image src="assets/images/bet_logo.png"></mat-grid-tile>
-          <mat-grid-tile>
-            <mat-list role="list">
-              <mat-list-item role="listitem"><div class="row"></div></mat-list-item>
-              <mat-list-item role="listitem">Item {{data.accessCodeAttended?.ticketNumber}}</mat-list-item>
-              <mat-list-item role="listitem">Item 3</mat-list-item>
-            </mat-list>
-          </mat-grid-tile>
-      </mat-grid-list>
-  </mat-card>
-</td-layout>
--->
+<div align="center">
+  <h1>Centro de apuestas</h1>
+  <div>
+      <mat-form-field class="input-field">
+        <input matInput placeholder="Usuario" [(ngModel)]="Portfield">
+      </mat-form-field>
+      <br/>
+      <mat-form-field class="input-field">
+        <input matInput placeholder="Contraseña" [(ngModel)]="Portfield">
+      </mat-form-field>
+    </div>
 
-<p>{{a}}</p>
-<button (click)="reset()">Reset</button>
-<button (click)="increase10()">Incrementar 10</button>
-<div>
-  <label>Nuevo valor:
-    <input [ngModel]="a" placeholder="valor"/>
-  </label>
+  <div class="buttons">
+    <button mat-raised-button class="button-login">Iniciar sesión</button>
+    <button mat-raised-button class="button-login">Registrarse</button>
+  </div>
 </div>

@@ -4,17 +4,23 @@
   </div>
 
   <div class="example-button-row">
+
     <mat-form-field class="input-field">
       <p></p>
       <input matInput placeholder="IP" [(ngModel)]="IPfield">
     </mat-form-field>
+    
     <button mat-raised-button class="aplicar-button" (click)="aplicarIP()">Aplicar</button>
+    
     <mat-form-field class="input-field">
       <p></p>
       <input matInput placeholder="Puerto" [(ngModel)]="Portfield">
     </mat-form-field>
+    
     <button mat-raised-button class="aplicar-button" (click)="aplicarPort()">Aplicar</button>
+
   </div>
 
   <router-outlet></router-outlet>
+  
 </td-layout-nav>
