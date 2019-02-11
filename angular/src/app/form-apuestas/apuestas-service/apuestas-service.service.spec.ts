@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GestionarApuestasService } from './gestionar-apuestas.service';
+import { GestionarApuestasService } from './apuestas-service.service';
 
 describe('GestionarApuestasService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

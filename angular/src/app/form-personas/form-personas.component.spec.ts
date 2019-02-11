@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VerPersonasComponent } from './ver-personas.component';
+import { VerPersonasComponent } from './form-personas.component';
 
 describe('VerPersonasComponent', () => {
   let component: VerPersonasComponent;

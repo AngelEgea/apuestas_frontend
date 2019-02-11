@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GestionarPersonasService } from './gestionar-personas.service';
+import { GestionarPersonasService } from './personas-service.service';
 
 describe('GestionarPersonasService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

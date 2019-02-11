@@ -9,14 +9,14 @@ import { FormLoginComponent } from './form-login/form-login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './shared/core.module';
 import { FormLoginModule } from './form-login/form-login-module';
-import { VerApuestasComponent } from './ver-apuestas/ver-apuestas.component';
-import { VerPersonasComponent } from './ver-personas/ver-personas.component';
+import { FormApuestasComponent } from './form-apuestas/form-apuestas.component';
+import { FormPersonasComponent } from './form-personas/form-personas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VerApuestasComponent,
-    VerPersonasComponent
+    FormApuestasComponent,
+    FormPersonasComponent
   ],
   imports: [
     BrowserModule,

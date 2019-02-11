@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Apuesta } from '../shared/apuesta';
-import { GestionarApuestasService } from '../gestionar-apuestas/gestionar-apuestas.service';
+import { GestionarApuestasService } from './apuestas-service/apuestas-service.service';
 
 @Component({
-  selector: 'app-ver-apuestas',
-  templateUrl: './ver-apuestas.component.html',
-  styleUrls: ['./ver-apuestas.component.css']
+  selector: 'app-form-apuestas',
+  templateUrl: './form-apuestas.component.html',
+  styleUrls: ['./form-apuestas.component.css']
 })
-export class VerApuestasComponent implements OnInit {
+export class FormApuestasComponent implements OnInit {
   apuestas: Apuesta[];
 
   constructor(private gestorApuestas: GestionarApuestasService) { }

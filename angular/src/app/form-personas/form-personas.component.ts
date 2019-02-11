@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from '../shared/persona';
-import { GestionarPersonasService } from '../gestionar-personas/gestionar-personas.service';
+import { GestionarPersonasService } from './personas-service/personas-service.service';
 
 @Component({
-  selector: 'app-ver-personas',
-  templateUrl: './ver-personas.component.html',
-  styleUrls: ['./ver-personas.component.css']
+  selector: 'app-form-personas',
+  templateUrl: './form-personas.component.html',
+  styleUrls: ['./form-personas.component.css']
 })
-export class VerPersonasComponent implements OnInit {
+export class FormPersonasComponent implements OnInit {
   personas: Persona[];
 
   constructor(private gestorPersonas: GestionarPersonasService) { }

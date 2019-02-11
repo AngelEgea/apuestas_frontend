@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
-import { Persona } from '../shared/persona';
-import { HostBackend } from '../shared/hostBackend';
+import { Apuesta } from '../../shared/apuesta';
+import { HostBackend } from '../../shared/hostBackend';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -13,8 +13,8 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class GestionarPersonasService {
-  private getAllPersonasUri = '/apuestas-backend/services/rest/personamanagement/v1/persona/search';
+export class GestionarApuestasService {
+  private getAllApuestasUri = '/apuestas-backend/services/rest/apuestamanagement/v1/apuesta/cto/search';
   private pageable = {
     'pageable' : {
       'pageNumber' : '0',
@@ -25,17 +25,24 @@ export class GestionarPersonasService {
   constructor(private http: HttpClient) { }
 
   /** POST apuestas from the server */
-  getPersonas (): Observable<Persona[]> {
-    return this.http.post<Persona[]>(this.generateURL(this.getAllPersonasUri), this.pageable, httpOptions)
+  getApuestas (): Observable<Apuesta[]> {
+    return this.http.post<Apuesta[]>(this.generateURL(this.getAllApuestasUri), this.pageable, httpOptions)
       .pipe(
-        catchError(this.handleError<Persona[]>('getPersonas', [])),
-        map(personas => (this.procesarPersona(personas)))
+        catchError(this.handleError<Apuesta[]>('getApuestas', [])),
+        map(apuestas => (this.procesarApuesta(apuestas)))
       );
   }
 
-  private procesarPersona(personas: Persona[]): Persona[] {
-    personas = personas['content'];
-    return personas;
+  private procesarApuesta(apuestas: Apuesta[]): Apuesta[] {
+    if (!apuestas || apuestas.length === 0) {
+      return [];
+    }
+
+    apuestas = apuestas['content'];
+    const nuevas_apuestas: Apuesta[] = [] as Apuesta[];
+    apuestas.forEach(apuesta => nuevas_apuestas.push(apuesta['apuesta']));
+    apuestas = nuevas_apuestas;
+    return apuestas;
   }
 
   private generateURL(uri: string): string {
@@ -52,7 +59,7 @@ export class GestionarPersonasService {
     return (error: any): Observable<T> => {
       // TODO: send the error to remote logging infrastructure
       // console.error(error); // log to console instead
-      console.log('No se puede obtener la lista de personas');
+      console.log('No se puede obtener la lista de apuestas');
 
       // Let the app keep running by returning an empty result.
       return of(result as T);
