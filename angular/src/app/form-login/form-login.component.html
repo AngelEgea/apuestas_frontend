@@ -1,14 +1,14 @@
 <div align="center">
-  <h1>Centro de apuestas</h1>
+  <h1 [ngClass]="estiloTitulo">Centro de apuestas</h1>
   <div>
-      <mat-form-field class="input-field">
-        <input matInput placeholder="Usuario" [(ngModel)]="user_field">
-      </mat-form-field>
-      <br/>
-      <mat-form-field class="input-field">
-        <input matInput placeholder="Contraseña" [(ngModel)]="pass_field">
-      </mat-form-field>
-    </div>
+    <mat-form-field class="input-field">
+      <input matInput placeholder="Usuario" [(ngModel)]="user_field">
+    </mat-form-field>
+    <br/>
+    <mat-form-field class="input-field">
+      <input matInput placeholder="Contraseña" [type]="'password'" [(ngModel)]="pass_field">
+    </mat-form-field>
+  </div>
 
   <div class="buttons">
     <button mat-raised-button class="button-login" (click)="onClickLogin()">Iniciar sesión</button>

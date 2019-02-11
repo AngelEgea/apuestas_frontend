@@ -11,3 +11,15 @@
     margin-left: 5%;
     margin-right: 5%;
 }
+
+.tituloRojo {
+    color: rgb(255,0,0);
+}
+
+.tituloNegro {
+    color: rgb(0,0,0);
+}
+
+.tituloVerde {
+    color: rgb(0,255,0);
+}

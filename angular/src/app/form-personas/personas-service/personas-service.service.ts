@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
-import { Persona } from '../../shared/persona';
-import { HostBackend } from '../../shared/hostBackend';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import { Persona } from '../../shared/persona';
+import { HostBackend } from '../../shared/hostBackend';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
